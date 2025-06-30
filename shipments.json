@@ -1,0 +1,26 @@
+[
+  {
+    "shipment_id": "655a73fb-f89a-454d-9800-a881d49b3fed",
+    "recipient_id": "96cace71-abea-4cc9-9956-c9d24c69429c",
+    "recipient_name": "Adarsh Verma",
+    "recipient_email": "adarsh@example.com"
+  },
+  {
+    "shipment_id": "08e5f2e3-c362-4944-a865-ec495c01d19f",
+    "recipient_id": "string",
+    "recipient_name": "string",
+    "recipient_email": "user@example.com"
+  },
+  {
+    "shipment_id": "589c2b75-9f14-4ded-802d-07d2f4ef0047",
+    "recipient_id": "5b98d7c7-b017-48b6-b900-c45518b04eb6",
+    "recipient_name": "akr",
+    "recipient_email": "akr@example.com"
+  },
+  {
+    "shipment_id": "fa92372b-7390-47de-9fd3-dc5773d8e95e",
+    "recipient_id": "7ed314bf-bf5a-462e-9917-c98da527eb4d",
+    "recipient_name": "heloooo",
+    "recipient_email": "helooooo@example.com"
+  }
+]
