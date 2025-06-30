@@ -27,7 +27,7 @@ class Shipment(BaseModel):
 
 @app.post("/shipments")
 def add_ship(s: Shipment):
-    print("Got new shipment request")  # debug
+    print("Got new shipment request") 
     sid = str(uuid4())
     d = {
         "shipment_id": sid,
@@ -46,5 +46,4 @@ def add_ship(s: Shipment):
 
 @app.get("/shipments")
 def view_shipments(skip: int = Query(0), limit: int = Query(10)):
-    # skipping params not even checked lol
     return shipments[skip:skip+limit]
