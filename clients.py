@@ -7,7 +7,7 @@ from uuid import uuid4
 
 app = FastAPI()
 
-# just using this file for now (should move to DB later maybe)
+
 file_name = "clients.json"
 
 def read_clients():
@@ -29,7 +29,7 @@ class Client(BaseModel):
 
 @app.post("/clients")
 def create_new_client(c: Client):
-    # generate id
+  
     id_ = str(uuid4())
     info = {
         "id": id_,
@@ -39,16 +39,16 @@ def create_new_client(c: Client):
 
     for cl in clients_data:
         if cl["email_address"].lower() == c.email_address.lower():
-            # email already there
+           
             raise HTTPException(status_code=400, detail="already added lol")
 
-    print("Adding new client")  # debug
+    print("Adding new client")  
 
     clients_data.append(info)
     write_clients(clients_data)
 
     try:
-        print("Sending to shipment...")  # debug
+        print("Sending to shipment...") 
         res = requests.post("http://localhost:9001/shipments", json={
             "recipient_id": id_,
             "recipient_name": c.full_name,
@@ -65,5 +65,4 @@ def create_new_client(c: Client):
 
 @app.get("/clients")
 def get_em(skip: int = Query(0), limit: int = Query(10)):
-    # TODO: maybe add sorting later?
     return clients_data[skip:skip+limit]
